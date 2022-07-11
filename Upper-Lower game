@@ -1,0 +1,27 @@
+from ibo import data
+import random
+
+flag = True
+score = 0
+x = random.choice(data)
+while flag:
+    y = random.choice(data)
+    print(f"compare X: {x['name']} a {x['description']} from {x['country']}")
+    print(f"compare Y: {y['name']} a {y['description']} from {y['country']}")
+
+    ask = input("who has more followers? type 'x' or 'y': ")
+    if ask == "x" and x["follower_count"] > y["follower_count"]:
+        score += 1
+        x = y
+        print(score)
+    elif ask == "y" and x["follower_count"] < y["follower_count"]:
+        score += 1
+        x = y
+        print(score)
+    else:
+        print(score)
+        flag = False
+ ========================================================================================
+ 
+ 
+ 
