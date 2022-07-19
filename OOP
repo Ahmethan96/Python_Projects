@@ -1,0 +1,25 @@
+class User:
+    def __init__(self, id, name, lastname):
+        self.id = id
+        self.name = name
+        self.lastname = lastname
+
+mugla = User("163","ibrahim", "ahmethan")
+de_montfort = User("269","ahmethan","ibrahim")
+
+print(mugla.id)
+print(de_montfort.id)
+
+
+class New_user:
+    pass
+
+mugla_1 = New_user()
+de_montfort_1 = New_user()
+
+mugla_1.id = "163"
+de_montfort_1.id = "269"
+
+print(mugla_1.id)
+print(de_montfort_1.id)
+
