@@ -46,3 +46,87 @@ print(user_1.followers)
 print(user_1.following)
 print(user_2.followers)
 print(user_2.following)
+
+
+######################################################################################################################################################
+
+(ahmethan)
+from main import Question
+from data import question_data
+from ibrahim import QuizBrain
+
+question_bank = []
+for i in question_data:
+    # print(i["text"], i["answer"])
+    q = Question(i["text"], i["answer"])
+    question_bank.append(q)
+
+# for j in question_bank:
+#     print(j.text)
+#     print(j.answer)
+
+quiz = QuizBrain(question_bank)
+
+while quiz.still_has_question():
+    quiz.next_question()
+
+
+
+(main)
+
+class Question:
+    def __init__(self, text, answer):
+        self.text = text
+        self.answer = answer
+
+
+(ibrahim)
+
+class QuizBrain:
+    def __init__(self, question):
+        self.question_number = 0 ## attribute
+        self.ask = question
+
+    def still_has_question(self):
+        x = len(self.ask)
+        if x == self.question_number:
+            return False
+        else:
+            return True
+
+
+    def next_question(self):
+        current_question = self.ask[self.question_number]
+        self.question_number += 1
+        input(f"Q.{self.question_number} {current_question.text} (True/False): ")
+
+
+# ibo = QuizBrain(question_bank)
+# print(ibo.ask[0])
+
+# print(QuizBrain(question_bank[0].text))
+# print(QuizBrain(question_bank[0].answer))
+# ibo = QuizBrain(question_bank)
+# print(ibo.ask[ibo.question_number].text)
+# print(ibo.ask[ibo.question_number].answer)
+
+
+(data) 
+
+question_data = [
+{"text": "A slug's blood is green.", "answer": "True"},
+{"text": "The loudest animal is the African Elephant.", "answer": "False"},
+{"text": "Approximately one quarter of human bones are in the feet.", "answer": "True"},
+{"text": "The total surface area of a human lungs is the size of a football pitch.", "answer": "True"},
+{"text": "In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.", "answer": "True"},
+{"text": "In London, UK, if you happen to die in the House of Parliament, you are entitled to a state funeral.", "answer": "False"},
+{"text": "It is illegal to pee in the Ocean in Portugal.", "answer": "True"},
+{"text": "You can lead a cow down stairs but not up stairs.", "answer": "False"},
+{"text": "Google was originally called 'Backrub'.", "answer": "True"},
+{"text": "Buzz Aldrin's mother's maiden name was 'Moon'.", "answer": "True"},
+{"text": "No piece of square dry paper can be folded in half more than 7 times.", "answer": "False"},
+{"text": "A few ounces of chocolate can to kill a small dog.", "answer": "True"}
+]
+
+
+#################################################################################################################################################
