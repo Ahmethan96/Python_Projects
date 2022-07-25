@@ -130,3 +130,38 @@ question_data = [
 
 
 #################################################################################################################################################
+
+
+
+from turtle import Turtle, Screen
+
+ibo = Turtle()
+# ibo.forward(100)
+screen = Screen()
+
+
+
+start = 4
+init = 360
+
+flag = True
+while start <11:
+    for j in range(start):
+        ibo.forward(100)
+        ibo.left(360/start)
+    start += 1
+
+
+
+### Angel's solution
+
+def draw_shape(num_sides):
+    angle = 360 / num_sides
+    for _ in range(num_sides):
+        ibo.forward(100)
+        ibo.left(angle)
+
+
+for shape in range(3, 11):
+    draw_shape(shape)
+screen.exitonclick()
