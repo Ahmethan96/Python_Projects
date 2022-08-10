@@ -1,1 +1,33 @@
+from turtle import Screen, Turtle
+screen = Screen()
+screen.setup(width= 600, height= 600)
+screen.bgcolor("black")
+screen.title("Over the horizon tech")
+
+## creating the snake body
+
+def turtle():
+    n = 0
+    for i in range(3):
+        ibo = Turtle()
+        ibo.color("white")
+        ibo.shape("square")
+        ibo.goto(n,0)
+        n -= 20
+turtle()
+
+## or
+
+starting_position = [(0, 0),(-20, 0),(-40, 0)]
+for position in starting_position:
+    new_turtle = Turtle("square")
+    new_turtle.color("white")
+    new_turtle.goto(position)
+    
+screen.exitonclick()
+
+##############################################################################################################
+
+
+
 
