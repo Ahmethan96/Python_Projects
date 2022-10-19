@@ -53,4 +53,32 @@ if direction == "encrypt":
 elif direction == "decrypt":
     decrypt(text, shift)
 
+#######################################################
 
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+# direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
+
+alphabet_2 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+def encrypt(text,shift):
+    # text = input("Type your message:\n").lower()
+    ibo = []
+    for j in range(len(text)):
+        index = alphabet.index(text[j])
+        ibo.append(index)
+    print(ibo)
+
+    for i in range(shift):
+        num = 0
+        x = alphabet.pop(num)
+        alphabet.append(x)
+    new = []
+    for k in range(len(ibo)):
+        g = alphabet[ibo[k]]
+        new.append(g)
+    print("".join(new))
+
+print(encrypt(text, shift))
