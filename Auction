@@ -1,0 +1,29 @@
+from replit import clear
+
+dic = {}
+
+flag = True
+while flag:
+    ask_name = input("what is you name? ")
+    ask_bid = int(input("what's your bid? "))
+    dic[ask_name] = ask_bid
+    clear()
+    ask_game = input("are there any other bidders? type 'yes' or 'no' ")
+    if ask_game == "yes":
+        flag = True
+    else:
+        init = 0
+        for i in dic:
+            if dic[i] > init:
+                init = dic[i]
+                high = i
+        flag = False
+        print(init)
+        print(f" the highest bid is from {high} with bid of {init}")
+
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# print(thisdict["brand"]) ====> Ford
