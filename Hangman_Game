@@ -1,0 +1,94 @@
+import random
+
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
+
+print(len(stages))
+word_list = ["aardvark", "baboon", "camel"]
+pick = random.choice(word_list)
+print(pick)
+print(len(pick))
+
+lives = 7
+new_list = []
+for j in range(len(pick)):
+    new_list.append("_")
+print(new_list)
+print(f" the length of the new list is {len(new_list)}")
+flag = True
+while "_" in new_list:
+    guess = input("guess a letter: ")
+
+    for i in range(0, len(pick)):
+
+            if pick[i] == guess:
+                new_list[i] = guess
+                # index = pick.index(i)
+                # new_list[index] = i
+                print("True")
+                print(new_list)
+    if guess not in pick:
+            lives -= 1
+            print(stages[-lives])
+            if lives == 0:
+                print("Game over")
+                break
+
+
+
+print("Done!")
