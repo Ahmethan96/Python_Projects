@@ -101,3 +101,34 @@ def encrypt(plain_text, shift_amount):
     print(ciper_text)
 
 print(encrypt(text, shift))
+
+
+##############################################################
+
+
+ask = input("type your massage: ")
+shift = int(input("how many shifts? "))
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+mylist = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+for i in range(shift):
+    i = 0
+    s = mylist.pop(i)
+    mylist.append(s)
+
+print(alphabet)
+print(mylist)
+index = []
+for j in ask:
+    if j in alphabet:
+        d = alphabet.index(j)
+        index.append(d)
+print(index)
+
+massage = []
+for c in (index):
+    massage.append(mylist[c])
+    "".join(massage)
+
+print("your encrypted massage is {}".format("".join(massage)))
+
