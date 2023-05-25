@@ -30,5 +30,17 @@ answer = calculation_function(num1, num2)
 
 print(f"{num1} {operation_symbol} {num2} = {answer}")
 
-
 ////////////////////////////////////////////////////////
+
+def greet():
+    print("Hello!")
+
+# Assigning the function reference to a variable
+my_function = greet
+
+# Calling the function using the variable
+my_function()  # Output: Hello!
+
+//////////////////////////////////////////////////////
+
+
