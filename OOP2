@@ -1,0 +1,33 @@
+class Dog:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+    def add_one(self, x):
+        return x + 1
+
+    def bark(self):# method
+        return "bark"
+
+    def get_name(self):
+        return self.name
+
+d1 = Dog("boncuk", 4)
+d2 = Dog("ayibogan", 6)
+# d1.bark()
+
+print(d1.name, d1.age)
+print(d2.name, d2.age)
+
+
+print(d1.add_one(5))
+# print(type(d1.add_one(5)))
+
+print(d1.bark()) ## int
+print(d2.bark())
+# print(type(d1.bark())) ## str
+
+print(d1.get_name())
+/////////////////////////////////////////////////////////////////
