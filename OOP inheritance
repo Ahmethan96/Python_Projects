@@ -54,3 +54,17 @@ dog = Dog("Jerry", 19)
 print(cat.color)
 print(dog.age)
 
+////////////////////////////////////////////////////////////////////
+
+class Person:
+    number_of_people = 0
+
+    def __init__(self, name):
+        self.name = name
+        Person.number_of_people += 1
+
+p1 = Person("ibo")
+print(Person.number_of_people)
+
+p2 = Person("sue")
+print(Person.number_of_people)
