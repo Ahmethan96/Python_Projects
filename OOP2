@@ -56,7 +56,7 @@ class Course:
     def get_average_grade(self):
         value = 0
         for student in self.students:
-            value += student.get_grade()
+            value += student.get_grade()  ## c1.grade or c1.get_grade()
 
         return value / len(self.students)
 
