@@ -17,3 +17,40 @@ class Dog:
 *** we can re-write the code above more efficiently by using inheritance ***
 
 
+class Pet: ## Pet is
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def show(self):
+        print(f"I am {self.name} and I am {self.age} year old")
+
+    def speak(self):
+        print("I do not know what to say")
+
+
+class Cat(Pet):
+    def __init__(self, name, age, color):
+        super(Cat, self).__init__(name, age)
+        self.color = color
+
+
+    def speak(self):
+        print("Meow")
+
+    def show(self):
+        print(f"I am {self.name} and I am {self.color}")
+
+class Dog(Pet):
+    def speak(self):
+        print("Bark")
+
+    def show(self):
+        pass
+## Cat and Dog are inherited from the from upper level class
+
+cat = Cat("Tom", 20, "white")
+dog = Dog("Jerry", 19)
+
+print(cat.color)
+print(dog.age)
+
