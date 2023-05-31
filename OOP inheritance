@@ -68,3 +68,26 @@ print(Person.number_of_people)
 
 p2 = Person("sue")
 print(Person.number_of_people)
+
+
+/////////////////////////////////////////////////////////////////////
+
+@static method 
+
+class Math:
+
+    def add5(self, x):
+        return x + 5
+
+add = Math()
+print(add.add5(5))
+print(Math.add5(Math(),5))
+
+## instead use static method
+
+class Math1:
+    @staticmethod
+    def add5(x):
+        return x + 5
+
+print(Math1.add5(5))
