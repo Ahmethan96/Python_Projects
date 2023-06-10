@@ -22,14 +22,3 @@ class Food(Turtle):
         self.goto(random_x, random_y)
 
 
-
-
-
-
-
-
-
-
-
-food = Food()
-print(food.shape("circle"))
